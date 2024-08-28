@@ -54,32 +54,3 @@ contract InteractionsTest is StdCheats, Test {
         assertEq(preOwnerBalance + SEND_VALUE, afterOwnerBalance);
     }
 }
-
-// 10000000000000000000
-// 9900000000000000000
-
-// 79228162653955109644497236764
-// 79228162654063109644497236764
-
-// function testUserCanFundAndOwnerWithdraw() public {
-//     uint256 preUserBalance = address(USER).balance;
-//     uint256 preOwnerBalance = address(fundMe.getOwner()).balance;
-
-//     // Using vm.prank to simulate funding from the USER address
-//     vm.prank(USER);
-//     fundMe.fund{value: SEND_VALUE}();
-
-//     WithdrawFundMe withdrawFundMe = new WithdrawFundMe();
-//     withdrawFundMe.withdrawFundMe(address(fundMe));
-
-//     uint256 afterUserBalance = address(USER).balance;
-//     uint256 afterOwnerBalance = address(fundMe.getOwner()).balance;
-
-//     uint256 gasCost = tx.gasprice *
-//         (preUserBalance - afterUserBalance - SEND_VALUE);
-
-//     // Adjust for gas cost in the assertion
-//     assert(address(fundMe).balance == 0);
-//     assertEq(afterUserBalance + SEND_VALUE + gasCost, preUserBalance);
-//     assertEq(preOwnerBalance + SEND_VALUE, afterOwnerBalance);
-// }
