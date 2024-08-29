@@ -1,3 +1,5 @@
+.PHONY : all test clear deploy
+
 -include .env
 
 build :; forge build
